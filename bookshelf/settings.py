@@ -95,7 +95,12 @@ CORS_ALLOW_ORIGINS = [
     "https://deploy-vue-frontend.vercel.app/",
 ]
 
-ALLOWED_HOSTS = ["192.168.10.194", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "192.168.10.194",
+    "localhost",
+    "127.0.0.1",
+    "deploy-django-backend.onrender.com",
+]
 
 CORS_ALLOW_CREDENTIALS = True
 
