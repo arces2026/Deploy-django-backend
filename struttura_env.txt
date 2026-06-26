@@ -1,13 +1,17 @@
-# Credenziali Database
+# Credenziali Database locale (non per postgreSql us Render)
 DB_HOST=db
 DB_PORT=3306
 DB_NAME=vue_django
 DB_USER=root
-DB_PASSWORD=*******
+DB_PASSWORD=********
 
 # Variabile specifica per l'inizializzazione del container MariaDB
-MARIADB_ROOT_PASSWORD=******
+MARIADB_ROOT_PASSWORD=*******
 
-
-
+# Variabili usati per la creazione del superuser dal build command su Render
+# Build Command "python manage.py migrate && python manage.py createsuperuser --noinput && gunicorn bookshelf.wsgi"
+# L'opzione --noinput legge direttamente queste variabili
+DJANGO_SUPERUSER_USERNAME=marco
+DJANGO_SUPERUSER_EMAIL=tua@email.com
+DJANGO_SUPERUSER_PASSWORD=pass12!!
 
