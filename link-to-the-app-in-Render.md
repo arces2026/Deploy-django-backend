@@ -1,0 +1,1 @@
+https://deploy-django-backend.onrender.com/admin/
