@@ -1,17 +1,33 @@
-# Credenziali Database locale (non per postgreSql us Render)
+# ==========================================
+# CONFIGURAZIONE DATABASE LOCALE (MySQL/MariaDB)
+# ==========================================
 DB_HOST=db
 DB_PORT=3306
 DB_NAME=vue_django
 DB_USER=root
 DB_PASSWORD=********
 
-# Variabile specifica per l'inizializzazione del container MariaDB
-MARIADB_ROOT_PASSWORD=*******
 
-# Variabili usati per la creazione del superuser dal build command su Render
-# Build Command "python manage.py migrate && python manage.py createsuperuser --noinput && gunicorn bookshelf.wsgi"
-# L'opzione --noinput legge direttamente queste variabili
-DJANGO_SUPERUSER_USERNAME=marco
-DJANGO_SUPERUSER_EMAIL=tua@email.com
-DJANGO_SUPERUSER_PASSWORD=pass12!!
+# ==========================================
+# CONFIGURAZIONE DJANGO - PRODUZIONE (Render)
+# ==========================================
+# Render imposta automaticamente DATABASE_URL per PostgreSQL
+# Puoi comunque specificarla qui per chiarezza (su Render va in Environment Variables)
+# DATABASE_URL=postgresql://username:password@host:5432/database_name
 
+# SECRET_KEY - GENERA UNA CHIAVE SICURA!
+# Usa: python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+SECRET_KEY=django-insecure-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# ==========================================
+# VARIABILI PER IL SUPERUSER (usate su Render)
+# ==========================================
+DJANGO_SUPERUSER_USERNAME=*******
+DJANGO_SUPERUSER_EMAIL=********
+DJANGO_SUPERUSER_PASSWORD=************
+
+# ==========================================
+# ALTRE VARIABILI DI PRODUZIONE
+# ==========================================
+DEBUG=False
+ALLOWED_HOSTS=deploy-django-backend.onrender.com,localhost,127.0.0.1
